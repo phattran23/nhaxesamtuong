@@ -1,0 +1,2526 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sâm Tưởng — Cho thuê xe 4-45 chỗ | Quảng Thuận, Quảng Trị (Quảng Bình cũ)</title>
+  <meta name="description" content="Công ty TNHH Sâm Tưởng — Cho thuê xe 4, 7, 16, 29, 32, 45 chỗ phục vụ cưới hỏi, du lịch, lễ hội. Hoạt động tại Phường Quảng Thuận, Quảng Trị (Quảng Bình cũ). Hotline 0988 201 387 – 0352 183 557." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet của Sâm Tưởng -->
+  <style>
+/* ============================================================
+   SÂM TƯỞNG — Cho thuê xe Quảng Trị (Quảng Bình cũ)
+   Stylesheet v1.0
+   ============================================================ */
+
+/* ============ DESIGN TOKENS ============
+   Chỉnh màu sắc, font ở đây để áp dụng toàn site
+   ======================================= */
+:root {
+  /* Màu nền & chữ */
+  --ink: #1a1410;
+  --ink-2: #2d221a;
+  --paper: #faf4e8;
+  --paper-warm: #f3e9d2;
+  --cream: #ede0c2;
+
+  /* Màu thương hiệu (đỏ son — lấy từ chữ "Sâm Tưởng" trên xe) */
+  --red-brand: #c62828;
+  --red-deep: #8b1a1a;
+
+  /* Màu phụ trợ */
+  --ochre: #c8801a;
+  --ochre-deep: #a3620d;
+  --jade: #2a4a3e;
+  --jade-deep: #1a3028;
+  --jade-moss: #4a6b57;
+  --clay: #8b3a1f;
+  --gold: #d4a04c;
+
+  /* Đường viền & bóng đổ */
+  --line: rgba(26, 20, 16, .15);
+  --line-strong: rgba(26, 20, 16, .35);
+  --shadow-sm: 0 2px 8px rgba(26, 20, 16, .08);
+  --shadow-lg: 0 18px 50px rgba(26, 20, 16, .18);
+
+  /* Fonts */
+  --serif: "Fraunces", "Times New Roman", serif;
+  --sans: "Be Vietnam Pro", system-ui, sans-serif;
+}
+
+/* ============ RESET ============ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.55;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+/* Hiệu ứng giấy nền */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(139, 58, 31, .025) 1px, transparent 1px);
+  background-size: 3px 3px;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+/* ============ THANH THÔNG TIN TRÊN CÙNG ============ */
+.top-strip {
+  background: var(--jade-deep);
+  color: var(--paper-warm);
+  font-size: 12px;
+  letter-spacing: .08em;
+  padding: 8px 0;
+  position: relative;
+  z-index: 20;
+}
+.top-strip-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.top-strip .items { display: flex; gap: 28px; flex-wrap: wrap; }
+.top-strip .item { display: flex; align-items: center; gap: 8px; opacity: .85; }
+.top-strip .item svg { width: 13px; height: 13px; }
+.top-strip .accent {
+  color: var(--gold);
+  letter-spacing: .18em;
+  font-weight: 500;
+}
+
+/* ============ THANH MENU (NAV) ============ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 244, 232, .94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.logo { display: flex; align-items: center; gap: 14px; }
+.logo-mark {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--red-brand);
+  display: grid;
+  place-items: center;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 26px;
+  font-style: italic;
+  border: 2px solid var(--red-brand);
+  box-shadow: 0 2px 8px rgba(198, 40, 40, .2);
+  letter-spacing: -.04em;
+}
+.logo-text { line-height: 1; }
+.logo-name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 23px;
+  letter-spacing: -.01em;
+  font-style: italic;
+  color: var(--red-brand);
+}
+.logo-tagline {
+  font-size: 10px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--jade-deep);
+  margin-top: 4px;
+  font-weight: 700;
+  font-style: normal;
+}
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  padding: 6px 0;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--red-brand); }
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background: var(--red-brand);
+  transition: width .3s;
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  background: var(--red-brand);
+  color: var(--paper);
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all .25s;
+  box-shadow: 0 4px 14px rgba(198, 40, 40, .28);
+}
+.nav-cta:hover { background: var(--red-deep); transform: translateY(-1px); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+.hamburger span { width: 26px; height: 2px; background: var(--ink); border-radius: 2px; }
+
+/* ============ HERO ============ */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  padding: 70px 28px 90px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(212, 160, 76, .18), transparent 55%),
+    radial-gradient(ellipse at 10% 90%, rgba(42, 74, 62, .14), transparent 60%),
+    var(--paper);
+}
+.hero-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 60px;
+  align-items: center;
+  min-height: 70vh;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--red-brand);
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+.hero-eyebrow::before {
+  content: "";
+  width: 36px;
+  height: 1px;
+  background: var(--red-brand);
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(42px, 6vw, 82px);
+  line-height: .98;
+  letter-spacing: -.025em;
+  margin-bottom: 32px;
+  color: var(--ink);
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--jade-deep);
+}
+.hero h1 .underline { position: relative; display: inline-block; }
+.hero h1 .underline::after {
+  content: "";
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  bottom: .08em;
+  height: .22em;
+  background: var(--ochre);
+  opacity: .4;
+  z-index: -1;
+}
+.hero-lead {
+  font-size: 17px;
+  max-width: 540px;
+  color: var(--ink-2);
+  margin-bottom: 40px;
+  line-height: 1.65;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+.btn-primary {
+  background: var(--red-brand);
+  color: var(--paper);
+  padding: 18px 32px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: .03em;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all .3s;
+  box-shadow: 0 14px 40px rgba(198, 40, 40, .35);
+}
+.btn-primary:hover {
+  background: var(--red-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 22px 60px rgba(198, 40, 40, .45);
+}
+.btn-primary svg { transition: transform .3s; }
+.btn-primary:hover svg { transform: translateX(4px); }
+.btn-ghost {
+  padding: 18px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  border: 1.5px solid var(--line-strong);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all .25s;
+}
+.btn-ghost:hover { border-color: var(--ink); background: var(--paper-warm); }
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+.stat-num {
+  font-family: var(--serif);
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--jade-deep);
+  letter-spacing: -.02em;
+}
+.stat-num sup {
+  font-size: 20px;
+  color: var(--red-brand);
+  font-weight: 400;
+  vertical-align: top;
+  margin-left: 3px;
+}
+.stat-label {
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-top: 6px;
+}
+
+/* ============ ẢNH HERO & CÁC THẺ TRANG TRÍ ============ */
+.hero-art { position: relative; height: 580px; }
+.hero-photo-main {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: #000;
+}
+.hero-photo-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.hero-photo-main::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(140deg, transparent 40%, rgba(26, 48, 40, .25) 100%);
+  pointer-events: none;
+}
+.hero-card-top {
+  position: absolute;
+  top: -28px;
+  right: -28px;
+  width: 200px;
+  background: var(--red-brand);
+  transform: rotate(4deg);
+  padding: 22px;
+  color: var(--paper);
+  z-index: 3;
+  border-radius: 6px;
+  box-shadow: 0 12px 30px rgba(198, 40, 40, .4);
+  font-family: var(--serif);
+}
+.hero-card-top .label {
+  font-size: 10px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  opacity: .9;
+  font-family: var(--sans);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.hero-card-top .num {
+  font-size: 56px;
+  font-weight: 500;
+  line-height: .9;
+  font-style: italic;
+}
+.hero-card-top .num sup {
+  font-size: 26px;
+  vertical-align: super;
+  font-style: normal;
+}
+.hero-card-top .txt {
+  font-size: 13px;
+  line-height: 1.3;
+  font-family: var(--sans);
+  font-weight: 500;
+  margin-top: 8px;
+}
+.hero-card-bottom {
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 270px;
+  background: var(--paper-warm);
+  padding: 22px;
+  border: 1px solid var(--line);
+  transform: rotate(-3deg);
+  z-index: 3;
+  border-radius: 6px;
+  box-shadow: var(--shadow-lg);
+}
+.hero-card-bottom .stars {
+  color: var(--ochre);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.hero-card-bottom .quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.hero-card-bottom .author {
+  font-size: 11px;
+  letter-spacing: .12em;
+  color: var(--ink-2);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.hero-badge {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(250, 244, 232, .95);
+  backdrop-filter: blur(8px);
+  padding: 14px 18px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 4;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+.hero-badge .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #3fa95a;
+  box-shadow: 0 0 0 4px rgba(63, 169, 90, .22);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(63, 169, 90, .22); }
+  50% { box-shadow: 0 0 0 8px rgba(63, 169, 90, .05); }
+}
+.stamp {
+  position: absolute;
+  top: 50%;
+  left: -60px;
+  transform: translateY(-50%) rotate(-90deg);
+  font-size: 10px;
+  letter-spacing: .5em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  opacity: .4;
+  white-space: nowrap;
+}
+
+/* ============ FORM ĐẶT XE ============ */
+.booking {
+  max-width: 1200px;
+  margin: -50px auto 0;
+  position: relative;
+  z-index: 10;
+  background: var(--paper-warm);
+  border-radius: 100px;
+  padding: 12px;
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr auto;
+  align-items: center;
+  border: 1px solid var(--line);
+}
+.booking-field {
+  padding: 14px 26px;
+  border-right: 1px solid var(--line);
+  position: relative;
+}
+.booking-field:last-of-type { border-right: none; }
+.booking-field label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.booking-field input,
+.booking-field select {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font: 500 15px var(--sans);
+  color: var(--ink);
+  outline: none;
+}
+.booking-field select { cursor: pointer; appearance: none; }
+.booking-btn {
+  background: var(--red-brand);
+  color: var(--paper);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0 6px;
+  transition: all .3s;
+}
+.booking-btn:hover { background: var(--red-deep); transform: scale(1.05); }
+
+/* ============ SECTIONS ============ */
+section { position: relative; z-index: 2; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 28px; }
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--red-brand);
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.section-eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--red-brand);
+}
+.section-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(34px, 4.4vw, 58px);
+  line-height: 1.02;
+  letter-spacing: -.02em;
+  max-width: 720px;
+}
+.section-title em { font-style: italic; color: var(--jade-deep); }
+.section-sub {
+  max-width: 380px;
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* ============ DỊCH VỤ ============ */
+.services { padding: 110px 0 80px; }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+.service-card {
+  padding: 32px 26px;
+  background: var(--paper-warm);
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--red-brand);
+}
+.service-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--jade-deep);
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+}
+.service-card h4 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  letter-spacing: -.01em;
+}
+.service-card p {
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.6;
+}
+.service-card .num {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--red-brand);
+  opacity: .3;
+}
+
+/* ============ ĐỘI XE ============ */
+.fleet { padding: 100px 0; background: var(--paper-warm); }
+.fleet-showcase {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 300px 300px;
+  gap: 20px;
+}
+.fleet-tile {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform .4s cubic-bezier(.2, .8, .2, 1);
+  background: #000;
+}
+.fleet-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s;
+}
+.fleet-tile:hover img { transform: scale(1.04); }
+.fleet-tile .shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(10, 15, 12, .85) 100%);
+  pointer-events: none;
+}
+.fleet-tile .info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 26px;
+  color: var(--paper);
+  z-index: 2;
+}
+.fleet-tile .badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: var(--red-brand);
+  color: var(--paper);
+  font-size: 10px;
+  letter-spacing: .18em;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.fleet-tile .badge.gold { background: var(--gold); color: var(--ink); }
+.fleet-tile h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.05;
+  letter-spacing: -.01em;
+  margin-bottom: 4px;
+}
+.fleet-tile p { font-size: 13px; opacity: .9; }
+.fleet-tile .corner-icon {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(250, 244, 232, .15);
+  backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  color: var(--paper);
+  border: 1px solid rgba(250, 244, 232, .3);
+  transition: all .3s;
+}
+.fleet-tile:hover .corner-icon {
+  background: var(--red-brand);
+  border-color: var(--red-brand);
+  transform: rotate(-45deg);
+}
+
+/* Lưới vị trí các ô */
+.tile-1 { grid-column: span 7; grid-row: span 2; }
+.tile-2 { grid-column: span 5; }
+.tile-3 { grid-column: span 3; }
+.tile-4 { grid-column: span 2; }
+
+/* ============ CÂU CHUYỆN ============ */
+.story { padding: 130px 0; background: var(--paper); }
+.story-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+}
+.story-visual { position: relative; }
+.story-photo {
+  border-radius: 280px 280px 24px 24px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  background: #000;
+  box-shadow: var(--shadow-lg);
+}
+.story-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.story-stat-card {
+  position: absolute;
+  bottom: 30px;
+  right: -40px;
+  background: var(--paper);
+  padding: 24px 28px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.story-stat-card .big {
+  font-family: var(--serif);
+  font-size: 44px;
+  line-height: 1;
+  font-weight: 500;
+  color: var(--red-brand);
+  letter-spacing: -.02em;
+  font-style: italic;
+}
+.story-stat-card .big sup {
+  font-size: 20px;
+  color: var(--gold);
+  margin-left: 2px;
+  font-style: normal;
+}
+.story-stat-card .lbl {
+  font-size: 12px;
+  color: var(--ink-2);
+  letter-spacing: .08em;
+  line-height: 1.3;
+  max-width: 110px;
+}
+.story-quote-mark {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 100px;
+  line-height: .5;
+  color: var(--red-brand);
+  margin-bottom: 10px;
+}
+.story-content h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(32px, 4vw, 50px);
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  margin-bottom: 28px;
+}
+.story-content h2 em { font-style: italic; color: var(--jade-deep); }
+.story-content p {
+  font-size: 16px;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+.story-content p strong { color: var(--ink); }
+.story-sig {
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.story-sig-name {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--red-brand);
+}
+.story-sig-role {
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-top: 3px;
+  font-weight: 600;
+}
+
+/* ============ KHU VỰC HOẠT ĐỘNG ============ */
+.coverage { padding: 110px 0; background: var(--paper-warm); }
+.coverage-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 70px;
+  align-items: center;
+}
+.coverage-map {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: var(--jade-deep);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.coverage-map svg { width: 100%; height: 100%; }
+.coverage-pin-card {
+  position: absolute;
+  background: var(--paper);
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--line);
+  font-size: 13px;
+}
+.coverage-pin-card.main {
+  top: 38%;
+  left: 24%;
+  border-left: 4px solid var(--red-brand);
+}
+.coverage-pin-card .pin-label {
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--red-brand);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.coverage-pin-card .pin-name {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 500;
+}
+.coverage-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 24px;
+  margin-top: 40px;
+}
+.coverage-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.coverage-item .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red-brand);
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+.coverage-item strong {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 2px;
+}
+.coverage-item span {
+  font-size: 12px;
+  color: var(--ink-2);
+  opacity: .8;
+}
+
+/* ============ GALLERY ============ */
+.gallery {
+  padding: 110px 0;
+  background: var(--jade-deep);
+  color: var(--paper);
+}
+.gallery .section-eyebrow { color: var(--gold); }
+.gallery .section-eyebrow::before { background: var(--gold); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 20px;
+}
+.gallery-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+  aspect-ratio: 4/3;
+  transition: transform .4s;
+}
+.gallery-card:hover { transform: translateY(-4px); }
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s;
+}
+.gallery-card:hover img { transform: scale(1.05); }
+.gallery-card .tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  padding: 5px 12px;
+  border-radius: 100px;
+  background: rgba(250, 244, 232, .9);
+  color: var(--ink);
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.gallery-card .cap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  background: linear-gradient(0deg, rgba(10, 15, 12, .9), transparent);
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+  z-index: 2;
+}
+
+/* ============ ĐIỂM ĐẾN ============ */
+.dest { padding: 110px 0; background: var(--paper); }
+.dest-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-template-rows: 280px 280px;
+  gap: 22px;
+}
+.dest-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform .5s cubic-bezier(.2, .8, .2, 1);
+}
+.dest-card:hover { transform: translateY(-5px) scale(1.005); }
+.dest-card:nth-child(1) { grid-row: span 2; }
+.dest-card .scene { position: absolute; inset: 0; width: 100%; height: 100%; }
+.dest-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(26, 20, 16, .82) 100%);
+}
+.dest-card .content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 26px;
+  color: var(--paper);
+  z-index: 2;
+}
+.dest-card .badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: rgba(212, 160, 76, .9);
+  color: var(--ink);
+  font-size: 10px;
+  letter-spacing: .18em;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.dest-card h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.05;
+  letter-spacing: -.01em;
+  margin-bottom: 6px;
+}
+.dest-card:nth-child(1) h3 { font-size: 40px; }
+.dest-card p {
+  font-size: 13px;
+  opacity: .85;
+  max-width: 320px;
+}
+.dest-card .arrow {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(250, 244, 232, .15);
+  backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  color: var(--paper);
+  border: 1px solid rgba(250, 244, 232, .3);
+  transition: all .3s;
+}
+.dest-card:hover .arrow {
+  background: var(--red-brand);
+  border-color: var(--red-brand);
+  transform: rotate(-45deg);
+}
+
+/* ============ BĂNG CHẠY ============ */
+.marquee {
+  background: var(--jade-deep);
+  color: var(--gold);
+  padding: 28px 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(212, 160, 76, .2);
+  border-bottom: 1px solid rgba(212, 160, 76, .2);
+}
+.marquee-track {
+  display: flex;
+  gap: 60px;
+  animation: marquee 40s linear infinite;
+  width: max-content;
+}
+.marquee-item {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 36px;
+  letter-spacing: -.01em;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  white-space: nowrap;
+}
+.marquee-item::after {
+  content: "✦";
+  color: var(--ochre);
+  font-style: normal;
+  font-size: 20px;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ============ VÌ SAO CHỌN ============ */
+.why { padding: 120px 0; }
+.why-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 50px;
+}
+.why-item {
+  display: flex;
+  gap: 22px;
+  padding: 28px;
+  background: var(--paper-warm);
+  border-radius: 16px;
+  border: 1px solid var(--line);
+}
+.why-item-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 44px;
+  color: var(--red-brand);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 60px;
+  letter-spacing: -.02em;
+}
+.why-item-body h4 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  letter-spacing: -.01em;
+}
+.why-item-body p {
+  color: var(--ink-2);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* ============ QUY TRÌNH ============ */
+.process { padding: 120px 0; background: var(--paper-warm); }
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-top: 60px;
+}
+.step { position: relative; padding-top: 28px; }
+.step-num {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  font-family: var(--serif);
+  font-size: 120px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--red-brand);
+  opacity: .15;
+  line-height: 1;
+  letter-spacing: -.03em;
+  pointer-events: none;
+}
+.step-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: var(--jade-deep);
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+.step h4 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  letter-spacing: -.01em;
+  position: relative;
+  z-index: 1;
+}
+.step p {
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.65;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============ ĐÁNH GIÁ ============ */
+.test { padding: 120px 0; }
+.test-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 50px;
+}
+.test-card {
+  padding: 32px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: var(--paper-warm);
+  position: relative;
+}
+.test-card:nth-child(2) {
+  background: var(--jade-deep);
+  color: var(--paper);
+  border-color: var(--jade-deep);
+}
+.test-card:nth-child(2) .test-who small {
+  color: var(--gold);
+  opacity: .8;
+}
+.test-card:nth-child(2) .test-stars { color: var(--gold); }
+.test-quote-mark {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 80px;
+  line-height: .6;
+  color: var(--red-brand);
+  margin-bottom: 12px;
+}
+.test-card:nth-child(2) .test-quote-mark { color: var(--gold); }
+.test-stars {
+  color: var(--ochre);
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+.test-text {
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+.test-who { display: flex; align-items: center; gap: 12px; }
+.test-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--red-brand);
+  color: var(--paper);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-family: var(--serif);
+  font-size: 18px;
+}
+.test-who strong {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+}
+.test-who small {
+  font-size: 12px;
+  opacity: .7;
+  letter-spacing: .04em;
+}
+
+/* ============ CTA + BẢN ĐỒ ============ */
+.cta-section { padding: 100px 0 120px; }
+.cta-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+}
+.cta-box {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 28px;
+  padding: 60px 50px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cta-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 90% 20%, rgba(198, 40, 40, .25), transparent 50%),
+    radial-gradient(ellipse at 10% 90%, rgba(42, 74, 62, .4), transparent 50%);
+  pointer-events: none;
+}
+.cta-box > * { position: relative; z-index: 2; }
+.cta-box h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(32px, 3.6vw, 50px);
+  line-height: 1.02;
+  letter-spacing: -.02em;
+  margin-bottom: 20px;
+}
+.cta-box h2 em { font-style: italic; color: var(--gold); }
+.cta-box p {
+  opacity: .75;
+  font-size: 16px;
+  max-width: 460px;
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+.phone-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 12px;
+}
+.phone-btn {
+  background: rgba(250, 244, 232, .08);
+  border: 1px solid rgba(250, 244, 232, .15);
+  padding: 18px 22px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all .25s;
+}
+.phone-btn:hover {
+  background: var(--red-brand);
+  border-color: var(--red-brand);
+}
+.phone-btn .label {
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  opacity: .6;
+}
+.phone-btn .num {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -.01em;
+}
+.map-card {
+  background: var(--paper-warm);
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+}
+.map-embed {
+  flex: 1;
+  min-height: 340px;
+  position: relative;
+  background: #dde6df;
+}
+.map-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  position: absolute;
+  inset: 0;
+}
+.map-details {
+  padding: 24px 26px;
+  border-top: 1px solid var(--line);
+}
+.map-details h4 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  letter-spacing: -.01em;
+}
+.map-details p {
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+.map-details .map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--red-brand);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .04em;
+}
+.map-details .map-link:hover { color: var(--red-deep); }
+
+/* ============ FOOTER ============ */
+footer {
+  background: var(--jade-deep);
+  color: var(--paper-warm);
+  padding: 80px 0 30px;
+}
+.foot-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+.foot-about .logo-mark {
+  background: var(--paper-warm);
+  color: var(--red-brand);
+  border-color: var(--paper-warm);
+}
+.foot-about .logo-name { color: var(--paper); }
+.foot-about .logo-tagline { color: var(--gold); }
+.foot-about p {
+  font-size: 14px;
+  opacity: .75;
+  line-height: 1.7;
+  margin-top: 20px;
+  max-width: 340px;
+}
+.foot-h {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 22px;
+  color: var(--paper);
+}
+.foot-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.foot-col a {
+  font-size: 14px;
+  opacity: .75;
+  transition: opacity .2s;
+}
+.foot-col a:hover { opacity: 1; color: var(--gold); }
+.foot-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  opacity: .85;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+.foot-contact-item svg {
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  flex-shrink: 0;
+  color: var(--gold);
+}
+.foot-bottom {
+  border-top: 1px solid rgba(250, 244, 232, .1);
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  opacity: .6;
+  flex-wrap: wrap;
+  gap: 16px;
+  letter-spacing: .04em;
+}
+.socials { display: flex; gap: 10px; }
+.social-ico {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(250, 244, 232, .2);
+  display: grid;
+  place-items: center;
+  transition: all .25s;
+}
+.social-ico:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* ============ NÚT LIÊN HỆ NỔI ============ */
+.float-contact {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.float-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--red-brand);
+  color: var(--paper);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 24px rgba(198, 40, 40, .45);
+  transition: all .3s;
+  position: relative;
+}
+.float-btn:hover { transform: scale(1.08); }
+.float-btn.zalo {
+  background: #0180ff;
+  box-shadow: 0 8px 24px rgba(1, 128, 255, .45);
+}
+.float-btn.zalo::after {
+  content: "";
+  position: absolute;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 2px solid #0180ff;
+  animation: ripple 1.8s infinite;
+}
+@keyframes ripple {
+  0% { transform: scale(.8); opacity: 1; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1080px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .fleet-showcase { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+  .tile-1, .tile-2, .tile-3, .tile-4 { grid-column: span 1; }
+  .fleet-tile { height: 260px; }
+  .dest-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .dest-card:nth-child(1) { grid-column: span 2; grid-row: auto; height: 320px; }
+  .dest-card { height: 240px; }
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .test-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .foot-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .story-inner { grid-template-columns: 1fr; gap: 50px; }
+  .story-visual { max-width: 460px; margin: 0 auto; }
+  .story-stat-card { right: 0; }
+  .coverage-inner { grid-template-columns: 1fr; gap: 50px; }
+  .coverage-map { max-width: 420px; margin: 0 auto; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-art { height: 500px; margin-top: 20px; }
+  .why-list { grid-template-columns: 1fr; }
+  .cta-grid { grid-template-columns: 1fr; }
+  .booking {
+    grid-template-columns: 1fr 1fr;
+    border-radius: 28px;
+    gap: 4px;
+  }
+  .booking-field {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .booking-field:nth-last-of-type(-n+2) { border-bottom: none; }
+  .booking-btn {
+    grid-column: span 2;
+    width: 100%;
+    height: 52px;
+    border-radius: 100px;
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .top-strip .items .item:nth-child(n+3) { display: none; }
+  .services-grid { grid-template-columns: 1fr; }
+  .fleet-showcase { grid-template-columns: 1fr; }
+  .dest-grid { grid-template-columns: 1fr; }
+  .dest-card:nth-child(1) { grid-column: auto; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .coverage-list { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr; }
+  .foot-grid { grid-template-columns: 1fr; }
+  .hero { padding: 40px 20px 80px; }
+  .hero-stats { gap: 28px; flex-wrap: wrap; }
+  .container { padding: 0 20px; }
+  .cta-box { padding: 44px 24px; }
+  .phone-block { grid-template-columns: 1fr; }
+  .marquee-item { font-size: 24px; gap: 40px; }
+  .booking {
+    grid-template-columns: 1fr;
+    border-radius: 28px;
+    margin: -30px 14px 0;
+  }
+  .booking-field { border-bottom: 1px solid var(--line); }
+  .booking-btn { grid-column: auto; }
+  .hero-card-top { width: 150px; padding: 16px; }
+  .hero-card-top .num { font-size: 40px; }
+  .hero-card-bottom { width: 230px; padding: 16px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     THANH THÔNG TIN LIÊN HỆ TRÊN CÙNG
+     Chỉnh số điện thoại / địa chỉ tại đây
+     ============================================================ -->
+<div class="top-strip">
+  <div class="top-strip-inner">
+    <div class="items">
+      <div class="item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Hotline: <strong>0988 201 387</strong> · <strong>0352 183 557</strong>
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Phường Quảng Thuận, Quảng Trị
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Phục vụ 24/7
+      </div>
+    </div>
+    <div class="accent">✦ HƠN 17 NĂM KINH NGHIỆM · TỪ 2008 ✦</div>
+  </div>
+</div>
+
+<!-- ============================================================
+     THANH MENU CHÍNH
+     ============================================================ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">S</div>
+      <div class="logo-text">
+        <div class="logo-name">Sâm Tưởng</div>
+        <div class="logo-tagline">Cho thuê xe · Est. 2008</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Dịch vụ</a>
+      <a href="#fleet">Đội xe</a>
+      <a href="#story">Câu chuyện</a>
+      <a href="#coverage">Khu vực</a>
+      <a href="#destinations">Điểm đến</a>
+      <a href="#contact">Liên hệ</a>
+    </div>
+    <a href="tel:0988201387" class="nav-cta">
+      Gọi đặt xe
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO — PHẦN MỞ ĐẦU
+     ============================================================ -->
+<section class="hero">
+  <div class="stamp">☆ Since MMVIII · Sâm Tưởng Co.,Ltd</div>
+
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">Công ty TNHH Sâm Tưởng · Quảng Thuận</div>
+      <h1>
+        Cho thuê xe <span class="underline">4 – 45 chỗ</span><br>
+        <em>tận tâm từng chuyến đi</em>.
+      </h1>
+      <p class="hero-lead">
+        Trụ sở tại <strong>Phường Quảng Thuận, Quảng Trị (Quảng Bình cũ)</strong> — hơn 17 năm phục vụ <strong>cưới hỏi, du lịch, lễ hội</strong>. Đội xe đa dạng từ sedan 4 chỗ đến xe khách 45 chỗ, bảo dưỡng kỹ lưỡng, tài xế bản địa giàu kinh nghiệm.
+      </p>
+      <div class="hero-actions">
+        <a href="tel:0988201387" class="btn-primary">
+          Gọi ngay: 0988 201 387
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#fleet" class="btn-ghost">Xem đội xe</a>
+      </div>
+
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">17<sup>+</sup></div>
+          <div class="stat-label">Năm kinh nghiệm</div>
+        </div>
+        <div>
+          <div class="stat-num">5000<sup>+</sup></div>
+          <div class="stat-label">Chuyến đi an toàn</div>
+        </div>
+        <div>
+          <div class="stat-num">4.9<sup>★</sup></div>
+          <div class="stat-label">Đánh giá khách hàng</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ảnh chính của Hero + các thẻ trang trí -->
+    <div class="hero-art">
+      <div class="hero-photo-main">
+        <img src="chu-cong-ty.jpg" alt="Chị chủ Sâm Tưởng bên xe cưới hỏi" />
+      </div>
+
+      <div class="hero-card-top">
+        <div class="label">Kinh nghiệm</div>
+        <div class="num">17<sup>+</sup></div>
+        <div class="txt">năm trên mọi<br>cung đường</div>
+      </div>
+
+      <div class="hero-card-bottom">
+        <div class="stars">★★★★★</div>
+        <div class="quote">"Xe đẹp, chị chủ nhiệt tình. Đoàn cưới 32 khách đi rất vui."</div>
+        <div class="author">— Chị Hương, Đồng Hới</div>
+      </div>
+
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Đang có xe rảnh hôm nay
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FORM ĐẶT XE NHANH
+     ============================================================ -->
+<div class="container">
+  <form class="booking" onsubmit="event.preventDefault(); window.location.href='tel:0988201387';">
+    <div class="booking-field">
+      <label>Điểm đón</label>
+      <input type="text" placeholder="Quảng Thuận, Đồng Hới, sân bay..." value="Quảng Thuận">
+    </div>
+    <div class="booking-field">
+      <label>Điểm đến</label>
+      <input type="text" placeholder="Phong Nha, Nhật Lệ..." value="Phong Nha - Thiên Đường">
+    </div>
+    <div class="booking-field">
+      <label>Ngày khởi hành</label>
+      <input type="date" value="2026-04-25">
+    </div>
+    <div class="booking-field">
+      <label>Loại xe</label>
+      <select>
+        <option>Xe 7 chỗ — Gia đình</option>
+        <option>Xe 4 chỗ — Đôi/Công tác</option>
+        <option>Xe 16 chỗ — Nhóm bạn</option>
+        <option>Xe 29 chỗ — Đoàn vừa</option>
+        <option>Xe 32 chỗ — Đoàn lớn</option>
+        <option>Xe 45 chỗ — Đoàn rất lớn</option>
+      </select>
+    </div>
+    <button type="submit" class="booking-btn" aria-label="Gọi đặt xe">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </button>
+  </form>
+</div>
+
+<!-- ============================================================
+     DỊCH VỤ CHÍNH
+     ============================================================ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">Dịch vụ chính</div>
+        <h2 class="section-title">Phục vụ <em>mọi dịp trọng đại</em>, mọi cung đường.</h2>
+      </div>
+      <p class="section-sub">
+        Từ lễ cưới ngày trọng đại, chuyến du lịch khám phá đến đoàn lễ hội đông người — Sâm Tưởng đều đã có mặt suốt hơn 17 năm qua tại Quảng Thuận và các vùng lân cận.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="num">01</div>
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h4>Xe cưới hỏi</h4>
+        <p>Xe sạch đẹp, trang trí hoa tươi theo yêu cầu. Tài xế lịch sự, đúng giờ cho ngày trọng đại của gia đình.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="num">02</div>
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+        </div>
+        <h4>Du lịch & lễ hội</h4>
+        <p>Đưa đón tour Phong Nha, Thiên Đường, Nhật Lệ, các lễ hội địa phương. Tài xế thông thuộc địa bàn.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="num">03</div>
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
+        </div>
+        <h4>Đưa đón sân bay</h4>
+        <p>Đón/tiễn sân bay Đồng Hới, Huế, Đà Nẵng. Theo dõi chuyến bay để đón đúng giờ, kể cả khi bay bị trễ.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="num">04</div>
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        </div>
+        <h4>Vé máy bay</h4>
+        <p>Đặt vé máy bay nội địa & quốc tế, tư vấn chặng bay phù hợp — hỗ trợ trọn gói cả xe đưa đón sân bay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ĐỘI XE — ẢNH THẬT
+     ============================================================ -->
+<section class="fleet" id="fleet">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">Đội xe Sâm Tưởng</div>
+        <h2 class="section-title">Đội xe <em>đa dạng, chỉn chu</em>, sẵn sàng mọi chuyến đi.</h2>
+      </div>
+      <p class="section-sub">
+        Từ xe 4 chỗ lịch sự, dòng Ford Transit 16 chỗ mới đời đến xe khách Samco 35-45 chỗ — tất cả đều là xe chính chủ, bảo dưỡng định kỳ.
+      </p>
+    </div>
+
+    <div class="fleet-showcase">
+      <!-- Ô lớn: Đội Transit có thương hiệu Sâm Tưởng -->
+      <div class="fleet-tile tile-1">
+        <img src="xe-transit-doi.jpg" alt="Đội xe Ford Transit Sâm Tưởng" />
+        <div class="shade"></div>
+        <div class="corner-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+        <div class="info">
+          <span class="badge gold">Chủ lực</span>
+          <h3>Ford Transit 16 chỗ</h3>
+          <p>Đội xe chủ lực — biển kiểm soát 73F-003.51, 73E-003.70. Thương hiệu Sâm Tưởng gắn bó suốt 17+ năm.</p>
+        </div>
+      </div>
+
+      <!-- Xe 29-32 chỗ Samco -->
+      <div class="fleet-tile tile-2">
+        <img src="xe-khach-samco.jpg" alt="Xe khách Samco 29-35 chỗ" />
+        <div class="shade"></div>
+        <div class="corner-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+        <div class="info">
+          <span class="badge">Đoàn lớn</span>
+          <h3>Samco 29 – 35 chỗ</h3>
+          <p>Xe khách Samco & Hyundai County cho đoàn du lịch, hội nghị, team building.</p>
+        </div>
+      </div>
+
+      <!-- Ford mới nhận -->
+      <div class="fleet-tile tile-1" style="grid-row: span 1">
+        <img src="xe-ford-moi.jpg" alt="Ford Transit mới nhận xe" />
+        <div class="shade"></div>
+        <div class="corner-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+        <div class="info">
+          <span class="badge gold">Đầu tư mới</span>
+          <h3>Ford Transit đời mới</h3>
+          <p>Mới bổ sung vào đội xe — đảm bảo chất lượng phục vụ khách hàng ngày càng tốt hơn.</p>
+        </div>
+      </div>
+
+      <!-- Biển hiệu -->
+      <div class="fleet-tile tile-2" style="grid-row: span 1">
+        <img src="bien-hieu.jpg" alt="Biển hiệu Tưởng Sâm cho thuê xe 4-45 chỗ" />
+        <div class="shade"></div>
+        <div class="info">
+          <span class="badge">Thương hiệu</span>
+          <h3>Cho thuê xe 4 – 45 chỗ</h3>
+          <p>Phục vụ lễ cưới hỏi · Du lịch, lễ hội · Vé máy bay</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CÂU CHUYỆN THƯƠNG HIỆU
+     ============================================================ -->
+<section class="story" id="story">
+  <div class="container story-inner">
+
+    <div class="story-visual">
+      <div class="story-photo">
+        <img src="chu-cong-ty.jpg" alt="Chủ công ty Sâm Tưởng" />
+      </div>
+      <div class="story-stat-card">
+        <div class="big">17<sup>+</sup></div>
+        <div class="lbl">năm giữ chữ tín với khách</div>
+      </div>
+    </div>
+
+    <div class="story-content">
+      <div class="section-eyebrow">Câu chuyện Sâm Tưởng</div>
+      <div class="story-quote-mark">"</div>
+      <h2>Một gia đình, <em>một chữ tín</em>, mười bảy năm không đổi.</h2>
+      <p>
+        Công ty TNHH Sâm Tưởng khởi đầu từ năm <strong>2008</strong> tại <strong>Phường Quảng Thuận, Quảng Trị (Quảng Bình cũ)</strong> — khi du lịch Quảng Bình còn là mảnh đất mới mẻ. Từ một chiếc xe 16 chỗ đầu tiên phục vụ đám cưới hàng xóm, đến nay Sâm Tưởng đã có đội xe đa dạng từ 4 đến 45 chỗ, phục vụ hàng nghìn đám cưới, chuyến du lịch và lễ hội mỗi năm.
+      </p>
+      <p>
+        Chúng tôi là <strong>công ty gia đình</strong> — nên chúng tôi hiểu rằng một chuyến xe không chỉ là phương tiện. Đó có thể là ngày cưới của con gái bạn, chuyến du lịch cuối năm của cả đại gia đình, hay lễ hội làng mà bố mẹ bạn đã chờ cả năm. Chúng tôi phục vụ bằng tâm thế đó.
+      </p>
+      <div class="story-sig">
+        <div>
+          <div class="story-sig-name">— Chị Sâm Tưởng</div>
+          <div class="story-sig-role">Chủ doanh nghiệp · Quảng Thuận, Quảng Trị</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     KHU VỰC HOẠT ĐỘNG
+     ============================================================ -->
+<section class="coverage" id="coverage">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">Khu vực hoạt động</div>
+        <h2 class="section-title">Trụ sở <em>Quảng Thuận</em>, phục vụ toàn miền Trung.</h2>
+      </div>
+      <p class="section-sub">
+        Sâm Tưởng đặt văn phòng tại Phường Quảng Thuận — điểm trung tâm giao thông của Quảng Trị (Quảng Bình cũ), thuận tiện phục vụ mọi địa phương trong khu vực.
+      </p>
+    </div>
+
+    <div class="coverage-inner">
+      <!-- Bản đồ minh hoạ -->
+      <div class="coverage-map">
+        <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="mapbg" cx="50%" cy="40%" r="70%">
+              <stop offset="0%" stop-color="#4a6b57" stop-opacity=".4"/>
+              <stop offset="100%" stop-color="#1a3028"/>
+            </radialGradient>
+          </defs>
+          <rect width="400" height="500" fill="url(#mapbg)"/>
+
+          <!-- Đường bờ biển cách điệu -->
+          <path d="M 280 0 Q 270 80, 290 140 Q 310 200, 295 260 Q 280 320, 300 380 Q 320 440, 310 500"
+                stroke="#d4a04c" stroke-width="2" fill="none" opacity=".35"/>
+          <path d="M 300 0 Q 290 80, 310 140 Q 330 200, 315 260 Q 300 320, 320 380 Q 340 440, 330 500 L 400 500 L 400 0 Z"
+                fill="#2a4a3e" opacity=".3"/>
+
+          <!-- Dãy núi phía tây -->
+          <path d="M 0 500 L 0 180 L 30 200 L 60 160 L 90 190 L 120 150 L 150 180 L 180 140 L 210 170 L 240 150 L 240 500 Z"
+                fill="#1a3028" opacity=".6"/>
+          <path d="M 0 500 L 0 250 L 40 270 L 80 240 L 130 260 L 170 230 L 220 250 L 220 500 Z"
+                fill="#0a1612" opacity=".5"/>
+
+          <!-- QL1A chạy dọc -->
+          <path d="M 200 0 Q 195 100, 210 200 Q 220 300, 205 400 Q 200 450, 215 500"
+                stroke="#d4a04c" stroke-width="2.5" fill="none" stroke-dasharray="6 6" opacity=".7"/>
+
+          <!-- Các pin địa điểm -->
+          <!-- Quảng Thuận (trung tâm, đỏ) -->
+          <circle cx="195" cy="210" r="18" fill="#c62828" opacity=".25"/>
+          <circle cx="195" cy="210" r="10" fill="#c62828"/>
+          <circle cx="195" cy="210" r="4" fill="#faf4e8"/>
+
+          <!-- Đồng Hới -->
+          <circle cx="215" cy="310" r="6" fill="#d4a04c"/>
+          <text x="225" y="314" fill="#faf4e8" font-size="11" font-family="Be Vietnam Pro" font-weight="500">Đồng Hới</text>
+
+          <!-- Phong Nha -->
+          <circle cx="130" cy="270" r="6" fill="#d4a04c"/>
+          <text x="75" y="274" fill="#faf4e8" font-size="11" font-family="Be Vietnam Pro" font-weight="500">Phong Nha</text>
+
+          <!-- Nhật Lệ -->
+          <circle cx="255" cy="340" r="5" fill="#d4a04c"/>
+          <text x="260" y="344" fill="#faf4e8" font-size="10" font-family="Be Vietnam Pro">Nhật Lệ</text>
+
+          <!-- Vũng Chùa -->
+          <circle cx="245" cy="90" r="5" fill="#d4a04c"/>
+          <text x="195" y="94" fill="#faf4e8" font-size="10" font-family="Be Vietnam Pro">Vũng Chùa</text>
+
+          <!-- Đông Hà -->
+          <circle cx="190" cy="430" r="5" fill="#d4a04c"/>
+          <text x="200" y="434" fill="#faf4e8" font-size="10" font-family="Be Vietnam Pro">Đông Hà</text>
+
+          <!-- Nhãn biển -->
+          <text x="340" y="250" fill="#d4a04c" font-size="10" font-family="Fraunces" font-style="italic" opacity=".7">Biển Đông</text>
+        </svg>
+
+        <!-- Thẻ chú thích Quảng Thuận -->
+        <div class="coverage-pin-card main">
+          <div class="pin-label">Trụ sở</div>
+          <div class="pin-name">Phường Quảng Thuận</div>
+        </div>
+      </div>
+
+      <div class="coverage-content">
+        <p style="font-size:16px;color:var(--ink-2);line-height:1.75;margin-bottom:20px">
+          Văn phòng chính của Sâm Tưởng đặt tại <strong>Phường Quảng Thuận</strong> — ngay trên trục Quốc lộ 1A, là điểm giao thông huyết mạch của Quảng Trị (Quảng Bình cũ). Từ đây, đội xe có thể đáp ứng nhanh chóng mọi đơn hàng trong bán kính 100km.
+        </p>
+        <p style="font-size:16px;color:var(--ink-2);line-height:1.75">
+          Chúng tôi đặc biệt am hiểu địa bàn <strong>Quảng Thuận và các vùng lân cận</strong> — từ Quảng Trạch, Tuyên Hóa, Bố Trạch đến Đồng Hới, đảm bảo phục vụ tận tâm cho cả khách hàng địa phương lẫn du khách từ xa đến.
+        </p>
+
+        <div class="coverage-list">
+          <div class="coverage-item">
+            <div class="dot"></div>
+            <div>
+              <strong>Quảng Thuận</strong>
+              <span>Trụ sở chính · Văn phòng điều hành</span>
+            </div>
+          </div>
+          <div class="coverage-item">
+            <div class="dot"></div>
+            <div>
+              <strong>Quảng Trạch</strong>
+              <span>Phục vụ cưới hỏi · Lễ hội làng</span>
+            </div>
+          </div>
+          <div class="coverage-item">
+            <div class="dot"></div>
+            <div>
+              <strong>Tuyên Hóa</strong>
+              <span>Đưa đón du lịch · Công tác</span>
+            </div>
+          </div>
+          <div class="coverage-item">
+            <div class="dot"></div>
+            <div>
+              <strong>Bố Trạch</strong>
+              <span>Tour Phong Nha - Thiên Đường</span>
+            </div>
+          </div>
+          <div class="coverage-item">
+            <div class="dot"></div>
+            <div>
+              <strong>Đồng Hới</strong>
+              <span>Đón sân bay · Biển Nhật Lệ</span>
+            </div>
+          </div>
+          <div class="coverage-item">
+            <div class="dot"></div>
+            <div>
+              <strong>Đông Hà — Huế — Đà Nẵng</strong>
+              <span>Chuyến dài · Công tác</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GALLERY — ẢNH THẬT KHÁCH HÀNG
+     ============================================================ -->
+<section class="gallery">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">Khoảnh khắc thực</div>
+        <h2 class="section-title" style="color:var(--paper)">Những <em style="color:var(--gold)">chuyến xe kỷ niệm</em>.</h2>
+      </div>
+      <p class="section-sub" style="color:rgba(250,244,232,.7)">
+        Những khoảnh khắc đời thực từ đội xe Sâm Tưởng — không phải ảnh studio, mà là câu chuyện thật.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <span class="tag">Xe cưới hỏi</span>
+        <img src="chu-cong-ty.jpg" alt="Xe cưới trang trí hoa tươi" />
+        <div class="cap">Xe cưới trang trí hoa tươi tận tâm</div>
+      </div>
+      <div class="gallery-card">
+        <span class="tag">Đội xe</span>
+        <img src="xe-khach-samco.jpg" alt="Xe khách Samco đón đoàn resort" />
+        <div class="cap">Samco đón đoàn Cam Ranh Riviera</div>
+      </div>
+      <div class="gallery-card">
+        <span class="tag">Ford Transit</span>
+        <img src="xe-transit-doi.jpg" alt="Cặp đôi Transit biển 73F & 73E" />
+        <div class="cap">Transit chính chủ — biển số 73F / 73E</div>
+      </div>
+      <div class="gallery-card">
+        <span class="tag">Đầu tư mới</span>
+        <img src="xe-mg-moi.jpg" alt="Nhận xe MG mới tại MG Quảng Bình" />
+        <div class="cap">Bổ sung xe 4 chỗ MG — 2024</div>
+      </div>
+      <div class="gallery-card">
+        <span class="tag">Xe mới</span>
+        <img src="xe-ford-moi.jpg" alt="Nhận Ford Transit mới tại Ford Bến Thành" />
+        <div class="cap">Nhận Ford Transit mới từ đại lý</div>
+      </div>
+      <div class="gallery-card">
+        <span class="tag">Biển hiệu</span>
+        <img src="bien-hieu.jpg" alt="Biển hiệu Tưởng Sâm cho thuê xe" />
+        <div class="cap">Văn phòng Sâm Tưởng tại Quảng Thuận</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     VÌ SAO CHỌN SÂM TƯỞNG
+     ============================================================ -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">Vì sao chọn Sâm Tưởng</div>
+        <h2 class="section-title">Bốn cam kết, <em>một chữ tín</em> gia đình.</h2>
+      </div>
+      <p class="section-sub">Chúng tôi không cạnh tranh bằng giá rẻ — chúng tôi được chọn vì sự chắc chắn, minh bạch và tận tâm.</p>
+    </div>
+
+    <div class="why-list">
+      <div class="why-item">
+        <div class="why-item-num">01</div>
+        <div class="why-item-body">
+          <h4>Tài xế bản địa 100%</h4>
+          <p>Tài xế là người Quảng Thuận — Quảng Bình, thuộc lòng từng ngã rẽ, hiểu từng mùa đẹp của mỗi điểm du lịch, biết quán ăn ngon dọc đường.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-item-num">02</div>
+        <div class="why-item-body">
+          <h4>Xe chính chủ, bảo dưỡng định kỳ</h4>
+          <p>Toàn bộ đội xe là xe chính chủ do công ty đầu tư, kiểm tra kỹ thuật trước mỗi chuyến. Không "xe đi thuê lại" — trách nhiệm rõ ràng.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-item-num">03</div>
+        <div class="why-item-body">
+          <h4>Báo giá minh bạch — không phát sinh</h4>
+          <p>Giá niêm yết rõ ràng theo cung đường và loại xe. Không tăng giá bất ngờ dịp lễ Tết, không phụ phí ẩn, không "chặt chém" khách vãng lai.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-item-num">04</div>
+        <div class="why-item-body">
+          <h4>Hỗ trợ 24/7 — cả lễ Tết</h4>
+          <p>Gọi hotline hoặc nhắn Zalo bất cứ lúc nào. Chị chủ và đội ngũ luôn sẵn sàng — từ đặt xe phút chót đến thay đổi lịch trình trong chuyến.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BĂNG CHẠY ĐỊA DANH
+     ============================================================ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">Phong Nha — Kẻ Bàng</span>
+    <span class="marquee-item">Động Thiên Đường</span>
+    <span class="marquee-item">Biển Nhật Lệ</span>
+    <span class="marquee-item">Vũng Chùa — Đảo Yến</span>
+    <span class="marquee-item">Suối Nước Moọc</span>
+    <span class="marquee-item">Đồi cát Quang Phú</span>
+    <span class="marquee-item">Phong Nha — Kẻ Bàng</span>
+    <span class="marquee-item">Động Thiên Đường</span>
+    <span class="marquee-item">Biển Nhật Lệ</span>
+    <span class="marquee-item">Vũng Chùa — Đảo Yến</span>
+    <span class="marquee-item">Suối Nước Moọc</span>
+    <span class="marquee-item">Đồi cát Quang Phú</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     ĐIỂM ĐẾN DU LỊCH
+     ============================================================ -->
+<section class="dest" id="destinations">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">Cung đường kinh điển</div>
+        <h2 class="section-title">Chúng tôi đưa bạn đến <em>vương quốc hang động</em>.</h2>
+      </div>
+      <p class="section-sub">
+        Từ di sản UNESCO Phong Nha – Kẻ Bàng đến bãi biển Nhật Lệ, từ Đồi Cát Quang Phú đến Vũng Chùa – Đảo Yến.
+      </p>
+    </div>
+
+    <div class="dest-grid">
+      <!-- Phong Nha (ô lớn) -->
+      <div class="dest-card">
+        <svg class="scene" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="cave" cx="50%" cy="60%" r="70%">
+              <stop offset="0%" stop-color="#d4a04c"/>
+              <stop offset="40%" stop-color="#8b3a1f"/>
+              <stop offset="100%" stop-color="#0a0f0c"/>
+            </radialGradient>
+          </defs>
+          <rect width="800" height="600" fill="#0a0f0c"/>
+          <path d="M 100 600 L 100 200 Q 200 60, 400 50 Q 600 60, 700 200 L 700 600 Z" fill="url(#cave)"/>
+          <path d="M 180 180 L 195 220 L 210 180" fill="#1a1410" opacity=".7"/>
+          <path d="M 240 160 L 260 230 L 280 160" fill="#1a1410" opacity=".7"/>
+          <path d="M 320 140 L 340 210 L 360 140" fill="#1a1410" opacity=".7"/>
+          <path d="M 420 130 L 445 220 L 470 130" fill="#1a1410" opacity=".7"/>
+          <path d="M 520 140 L 545 210 L 570 140" fill="#1a1410" opacity=".7"/>
+          <path d="M 610 160 L 630 225 L 650 160" fill="#1a1410" opacity=".7"/>
+          <rect x="100" y="450" width="600" height="150" fill="#2a4a3e" opacity=".4"/>
+          <path d="M 100 460 Q 250 455, 400 460 Q 550 465, 700 460" stroke="#d4a04c" stroke-width="1" fill="none" opacity=".3"/>
+          <path d="M 350 440 L 420 440 L 430 450 L 340 450 Z" fill="#1a1410"/>
+          <rect x="378" y="415" width="3" height="25" fill="#1a1410"/>
+        </svg>
+        <div class="overlay"></div>
+        <div class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+        <div class="content">
+          <span class="badge">Di sản UNESCO</span>
+          <h3>Động Phong Nha<br>– Kẻ Bàng</h3>
+          <p>Kỳ quan hang động lớn nhất thế giới, "vương quốc" của Quảng Bình.</p>
+        </div>
+      </div>
+
+      <!-- Thiên Đường -->
+      <div class="dest-card">
+        <svg class="scene" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="heaven" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2a4a3e"/>
+              <stop offset="100%" stop-color="#0f2018"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="400" fill="url(#heaven)"/>
+          <path d="M 80 400 L 100 280 L 120 400 Z" fill="#d4a04c" opacity=".7"/>
+          <path d="M 150 400 L 180 200 L 210 400 Z" fill="#c8801a" opacity=".8"/>
+          <path d="M 240 400 L 280 160 L 320 400 Z" fill="#d4a04c" opacity=".9"/>
+          <path d="M 350 400 L 385 220 L 420 400 Z" fill="#c8801a" opacity=".75"/>
+          <path d="M 450 400 L 480 260 L 510 400 Z" fill="#d4a04c" opacity=".6"/>
+          <path d="M 100 0 L 110 80 L 120 0 Z" fill="#c8801a" opacity=".6"/>
+          <path d="M 200 0 L 215 100 L 230 0 Z" fill="#d4a04c" opacity=".5"/>
+          <path d="M 320 0 L 335 90 L 350 0 Z" fill="#c8801a" opacity=".5"/>
+          <path d="M 450 0 L 465 110 L 480 0 Z" fill="#d4a04c" opacity=".5"/>
+          <path d="M 280 0 L 260 400 L 300 400 L 320 0 Z" fill="#d4a04c" opacity=".08"/>
+        </svg>
+        <div class="overlay"></div>
+        <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+        <div class="content">
+          <span class="badge">Hang động</span>
+          <h3>Động Thiên Đường</h3>
+        </div>
+      </div>
+
+      <!-- Nhật Lệ -->
+      <div class="dest-card">
+        <svg class="scene" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#d4a04c" stop-opacity=".8"/>
+              <stop offset="40%" stop-color="#4a6b57"/>
+              <stop offset="100%" stop-color="#1a3028"/>
+            </linearGradient>
+            <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#ede0c2"/>
+              <stop offset="100%" stop-color="#c8801a"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="400" fill="url(#sea)"/>
+          <circle cx="450" cy="100" r="40" fill="#d4a04c" opacity=".9"/>
+          <path d="M 0 280 Q 100 270, 200 280 T 400 280 T 600 280 L 600 400 L 0 400 Z" fill="#1a3028" opacity=".5"/>
+          <path d="M 0 310 Q 150 300, 300 310 T 600 310 L 600 400 L 0 400 Z" fill="url(#sand)"/>
+          <g transform="translate(100,300)">
+            <rect x="-3" y="0" width="6" height="80" fill="#3a2416"/>
+            <path d="M 0 0 Q -25 -20, -50 -15" stroke="#1a3028" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M 0 0 Q -20 -25, -38 -40" stroke="#1a3028" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M 0 0 Q 25 -20, 50 -15" stroke="#1a3028" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M 0 0 Q 20 -28, 35 -42" stroke="#1a3028" stroke-width="4" fill="none" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <div class="overlay"></div>
+        <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+        <div class="content">
+          <span class="badge">Biển</span>
+          <h3>Biển Nhật Lệ</h3>
+        </div>
+      </div>
+
+      <!-- Vũng Chùa -->
+      <div class="dest-card">
+        <svg class="scene" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="vung" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#c8801a" stop-opacity=".6"/>
+              <stop offset="50%" stop-color="#4a6b57"/>
+              <stop offset="100%" stop-color="#1a3028"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="400" fill="url(#vung)"/>
+          <path d="M 380 220 Q 430 180, 490 220 L 490 240 L 380 240 Z" fill="#1a3028" opacity=".8"/>
+          <path d="M 200 240 Q 260 190, 340 240 L 340 260 L 200 260 Z" fill="#2a4a3e"/>
+          <path d="M 0 260 Q 150 180, 300 220 Q 450 250, 600 200 L 600 400 L 0 400 Z" fill="#1a3028"/>
+          <rect x="0" y="240" width="600" height="30" fill="#2a4a3e" opacity=".6"/>
+          <circle cx="300" cy="150" r="35" fill="#d4a04c" opacity=".85"/>
+        </svg>
+        <div class="overlay"></div>
+        <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+        <div class="content">
+          <span class="badge">Di tích</span>
+          <h3>Vũng Chùa<br>– Đảo Yến</h3>
+        </div>
+      </div>
+
+      <!-- Suối Moọc -->
+      <div class="dest-card">
+        <svg class="scene" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="600" height="400" fill="#1a3028"/>
+          <path d="M 0 200 Q 100 160, 200 190 Q 300 220, 400 180 Q 500 140, 600 180 L 600 400 L 0 400 Z" fill="#2a4a3e"/>
+          <path d="M 0 260 Q 100 230, 200 260 Q 300 290, 400 250 Q 500 220, 600 260 L 600 400 L 0 400 Z" fill="#1a3028"/>
+          <path d="M 240 400 Q 280 320, 260 280 Q 240 240, 280 200 L 330 200 Q 340 260, 320 300 Q 300 350, 340 400 Z" fill="#4a6b57" opacity=".9"/>
+          <path d="M 260 400 Q 290 320, 280 280 Q 270 240, 290 200" stroke="#d4a04c" stroke-width="1" fill="none" opacity=".4"/>
+          <ellipse cx="200" cy="310" rx="30" ry="12" fill="#1a1410"/>
+          <ellipse cx="380" cy="330" rx="40" ry="14" fill="#1a1410"/>
+        </svg>
+        <div class="overlay"></div>
+        <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+        <div class="content">
+          <span class="badge">Sinh thái</span>
+          <h3>Suối Nước Moọc</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     QUY TRÌNH ĐẶT XE
+     ============================================================ -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">Quy trình đặt xe</div>
+        <h2 class="section-title">Bốn bước, <em>bốn phút</em>, lên đường.</h2>
+      </div>
+      <p class="section-sub">Đơn giản, minh bạch, không giấy tờ rườm rà — đúng tinh thần gia đình Quảng Trị.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h4>Liên hệ & tư vấn</h4>
+        <p>Gọi hotline hoặc nhắn Zalo — nhận tư vấn cung đường, chọn xe phù hợp trong 5 phút.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <h4>Chốt lịch & báo giá</h4>
+        <p>Xác nhận ngày giờ, điểm đón, nhận báo giá trọn gói bằng văn bản — không thay đổi về sau.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17h16M4 12h16M4 7h16"/></svg>
+        </div>
+        <h4>Cọc 30% — Giữ xe</h4>
+        <p>Chuyển khoản 30% đặt cọc, phần còn lại thanh toán sau khi hoàn thành chuyến đi.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3v18l7-4 7 4V3z"/></svg>
+        </div>
+        <h4>Xe đón — Hành trình bắt đầu</h4>
+        <p>Tài xế đến đúng giờ, xe sạch sẽ, nước uống sẵn sàng — chỉ việc ngả lưng và tận hưởng.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ĐÁNH GIÁ KHÁCH HÀNG
+     ============================================================ -->
+<section class="test">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">Khách hàng nói gì</div>
+        <h2 class="section-title"><em>Niềm tin</em> được bồi đắp qua từng chuyến đi.</h2>
+      </div>
+    </div>
+
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-quote-mark">"</div>
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">Đặt xe cưới 16 chỗ Ford Transit đưa đón họ nhà trai. Xe sạch đẹp, trang trí hoa tươi như yêu cầu, chị chủ nhiệt tình hỏi han từng chi tiết. Rất hài lòng!</p>
+        <div class="test-who">
+          <div class="test-avatar">H</div>
+          <div><strong>Chị Hương</strong><small>Cô dâu, Quảng Thuận</small></div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-quote-mark">"</div>
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">Đoàn công ty 30 người đặt xe 35 chỗ Samco đi Phong Nha. Tài xế bản địa vui tính, xe đúng giờ, giá minh bạch. Lần sau chắc chắn gọi lại Sâm Tưởng.</p>
+        <div class="test-who">
+          <div class="test-avatar">L</div>
+          <div><strong>Anh Long</strong><small>Giám đốc, Hà Nội</small></div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-quote-mark">"</div>
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">Gia đình 7 người đi 3 ngày khám phá Phong Nha – Nhật Lệ. Bác tài biết chỗ dừng nghỉ, biết quán ăn ngon địa phương. Cực kỳ đáng tiền.</p>
+        <div class="test-who">
+          <div class="test-avatar">M</div>
+          <div><strong>Chị Mai</strong><small>Gia đình, TP.HCM</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA + BẢN ĐỒ LIÊN HỆ
+     ============================================================ -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="cta-box">
+        <div class="section-eyebrow" style="color:var(--gold)">Đặt xe ngay</div>
+        <h2>Sẵn sàng <em>lên đường</em>?</h2>
+        <p>Gọi ngay hotline hoặc nhắn Zalo để nhận tư vấn miễn phí, báo giá trong 5 phút và giữ xe trong 24 giờ.</p>
+        <div class="phone-block">
+          <a href="tel:0988201387" class="phone-btn">
+            <span class="label">Hotline chính</span>
+            <span class="num">0988 201 387</span>
+          </a>
+          <a href="tel:0352183557" class="phone-btn">
+            <span class="label">Hotline phụ</span>
+            <span class="num">0352 183 557</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="map-card">
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=QL1A,+Qu%E1%BA%A3ng+Thu%E1%BA%ADn,+B%E1%BA%AFc+Gianh,+Qu%E1%BA%A3ng+Tr%E1%BB%8B,+Vietnam&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Văn phòng Sâm Tưởng tại Quảng Thuận">
+          </iframe>
+        </div>
+        <div class="map-details">
+          <h4>Văn phòng Sâm Tưởng</h4>
+          <p>QL1A, Phường Quảng Thuận,<br>Quảng Trị (Quảng Bình cũ)</p>
+          <a href="https://maps.app.goo.gl/wmAL72KYXcDmA4o99" target="_blank" rel="noopener" class="map-link">
+            Chỉ đường trên Google Maps
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <div class="logo">
+          <div class="logo-mark">S</div>
+          <div class="logo-text">
+            <div class="logo-name">Sâm Tưởng</div>
+            <div class="logo-tagline">Cho thuê xe · Est. 2008</div>
+          </div>
+        </div>
+        <p>Công ty TNHH Sâm Tưởng — đơn vị cho thuê xe 4 đến 45 chỗ uy tín tại Phường Quảng Thuận, Quảng Trị (Quảng Bình cũ). Hơn 17 năm phục vụ cưới hỏi, du lịch, lễ hội.</p>
+      </div>
+
+      <div class="foot-col">
+        <div class="foot-h">Dịch vụ</div>
+        <ul>
+          <li><a href="#services">Xe cưới hỏi</a></li>
+          <li><a href="#services">Xe du lịch & lễ hội</a></li>
+          <li><a href="#services">Đưa đón sân bay</a></li>
+          <li><a href="#services">Vé máy bay</a></li>
+          <li><a href="#fleet">Xe 4 chỗ</a></li>
+          <li><a href="#fleet">Xe 16 chỗ</a></li>
+          <li><a href="#fleet">Xe 29-45 chỗ</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <div class="foot-h">Khu vực</div>
+        <ul>
+          <li><a href="#coverage">Phường Quảng Thuận</a></li>
+          <li><a href="#coverage">Quảng Trạch</a></li>
+          <li><a href="#coverage">Tuyên Hóa</a></li>
+          <li><a href="#coverage">Bố Trạch</a></li>
+          <li><a href="#coverage">Đồng Hới</a></li>
+          <li><a href="#coverage">Đông Hà – Huế</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <div class="foot-h">Liên hệ</div>
+        <div class="foot-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div>
+            <a href="tel:0988201387" style="display:block;color:var(--paper);font-weight:600">0988 201 387</a>
+            <a href="tel:0352183557" style="display:block;opacity:.8">0352 183 557</a>
+          </div>
+        </div>
+        <div class="foot-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <a href="https://maps.app.goo.gl/wmAL72KYXcDmA4o99" target="_blank" rel="noopener">
+            QL1A, Phường Quảng Thuận,<br>Quảng Trị (Quảng Bình cũ)
+          </a>
+        </div>
+
+        <div class="socials" style="margin-top:18px">
+          <a href="#" class="social-ico" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+          </a>
+          <a href="https://zalo.me/0988201387" class="social-ico" aria-label="Zalo">
+            <span style="font-family:var(--serif);font-weight:700;font-size:14px;font-style:italic">Z</span>
+          </a>
+          <a href="https://maps.app.goo.gl/wmAL72KYXcDmA4o99" target="_blank" class="social-ico" aria-label="Google Maps">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <div>© 2026 Công ty TNHH Sâm Tưởng · Thành lập 2008 · Quảng Thuận, Quảng Trị (Quảng Bình cũ)</div>
+      <div>Thiết kế với tâm huyết của gia đình Quảng Trị</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     NÚT LIÊN HỆ NỔI GÓC PHẢI
+     ============================================================ -->
+<div class="float-contact">
+  <a href="https://zalo.me/0988201387" class="float-btn zalo" aria-label="Zalo">
+    <span style="font-family:var(--serif);font-weight:700;font-size:17px;font-style:italic">Z</span>
+  </a>
+  <a href="tel:0988201387" class="float-btn" aria-label="Call">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+</div>
+
+</body>
+</html>
